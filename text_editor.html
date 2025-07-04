@@ -46,9 +46,19 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            33% { transform: translateY(-20px) rotate(1deg); }
-            66% { transform: translateY(10px) rotate(-1deg); }
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            33% {
+                transform: translateY(-20px) rotate(1deg);
+            }
+
+            66% {
+                transform: translateY(10px) rotate(-1deg);
+            }
         }
 
         .editor-container {
@@ -746,75 +756,134 @@
             }
         }
 
-            .file-navbar {
-                position: relative;
-                display: inline-block;            }
+        .file-navbar {
+            position: relative;
+            display: inline-block;
+        }
 
-            .file-menu   {
-                display: none;
-                position: absolute;
-                background-color: #f0f0f0;
-                list-style-type: none;
-                margin: 0;
-                border: 1px solid #ccc;
-                box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-                width:125px;
-            }
+        .file-menu {
+            display: none;
+            position: absolute;
+            background-color: #f0f0f0;
+            list-style-type: none;
+            margin: 0;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+            width: 125px;
+        }
 
-            .file-menu li
-            {
-                border-bottom: 1px solid #d9d8d4;
-            }
+        .file-menu li {
+            border-bottom: 1px solid #d9d8d4;
+        }
 
-            .file-navbar:hover .file-menu {
-                display: block;
-                width:110px;
+        .file-navbar:hover .file-menu {
+            display: block;
+            width: 110px;
 
 
-            }
-            .file-navbar-2:hover .file-menu {
-                display: block;
-                width:100px;
-            }
-            .file-navbar-3:hover .file-menu {
-                display: block;
-                width:140px;
-            }
-            .file-navbar-5:hover .file-menu{
-                display: block;
-                width:125px;
-            }
-            .file-navbar-5{
-                z-index: 99;
+        }
 
-            }
-            .sub-menu{
-                display: none;
-                position: absolute;
-                background-color: #f0f0f0;
-                list-style-type: none;
-                padding: 10px;
-                margin: 0;
-                border: 1px solid #ccc;
-                box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-                width:125px;
-                
-            }
-            .file-navbar-6:hover .sub-menu{
-                display: block;
-                position: absolute;
-                margin-left: 80px;
-                margin-top: -20px;
-                width:130px;
-            }
-            #submitBtn{
-                background-color:#3b82f6;
-                color: white;
-                padding: 10px 20px;
-                border: none;
-                border-radius: 4px;
-                margin-left:310px
-            }
+        .file-navbar-2:hover .file-menu {
+            display: block;
+            width: 100px;
+        }
+
+        .file-navbar-3:hover .file-menu {
+            display: block;
+            width: 140px;
+        }
+
+        .file-navbar-5:hover .file-menu {
+            display: block;
+            width: 125px;
+        }
+
+        .file-navbar-5 {
+            z-index: 99;
+
+        }
+
+        .sub-menu {
+            display: none;
+            position: absolute;
+            background-color: #f0f0f0;
+            list-style-type: none;
+            padding: 10px;
+            margin: 0;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+            width: 125px;
+
+        }
+
+        .file-navbar-6:hover .sub-menu {
+            display: block;
+            position: absolute;
+            margin-left: 80px;
+            margin-top: -20px;
+            width: 130px;
+        }
+
+        #submitBtn {
+            background-color: #3b82f6;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            margin-left: 310px
+        }
+
+
+        /* Button */
+        .file-navbar-3 {
+            position: relative;
+            list-style: none;
+            cursor: pointer;
+            background-color: #f0f0f0;
+            padding: 10px;
+            width: fit-content;
+        }
+
+        .file-menu {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            list-style: none;
+            padding: 5px 0;
+            margin: 0;
+            top: 100%;
+            left: 0;
+            z-index: 10;
+        }
+
+        .file-navbar-3.show-menu .file-menu {
+            display: block;
+        }
+
+        .file-menu li {
+            padding: 5px 15px;
+            white-space: nowrap;
+        }
+
+        .file-menu li:hover {
+            background-color: #eee;
+        }
+
+        .text-area {
+            width: 100%;
+            min-height: 200px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 20px;
+            font-family: sans-serif;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid #000;
+            margin: 10px 0;
+        }
     </style>
 </head>
 
@@ -826,11 +895,11 @@
 
                 <li onclick="MenuClick()" class="file-navbar">File
                     <ul class="file-menu">
-                       <li>New file</li>
-                       <li>Open</li>
-                       <li>Save</li>
-                       <li>Save As</li>
-                       <li>Open Folder</li>
+                        <li>New file</li>
+                        <li>Open</li>
+                        <li>Save</li>
+                        <li>Save As</li>
+                        <li>Open Folder</li>
                     </ul>
                 </li>
 
@@ -838,18 +907,18 @@
                     <ul class="file-menu">
                         <li>Select all</li>
                         <li id="undoBtn" onclick="handleUndo()"><i class="bi bi-arrow-90deg-left">Undo</i></li>
-                        <li id="redoBtn" onclick="handleRedo()" ><i class="bi bi-arrow-90deg-right">Redo</i></li>
+                        <li id="redoBtn" onclick="handleRedo()"><i class="bi bi-arrow-90deg-right">Redo</i></li>
                     </ul>
                 </li>
-                <li onclick="MenuClick3()" class="file-navbar-3">Insert
+                <li onclick="MenuClick3()" class="file-navbar-3">
+                    Insert
                     <ul class="file-menu">
-                        <li><button onclcik="horizontalLine()" id="horizontal">Horizontal line</button></li>
+                        <li><button onclick="insertHorizontalLine()">Horizontal line</button></li>
                         <li>Pdf</li>
-                        <li>Ms word Docx</li>
+                        <li>Ms Word Docx</li>
                         <li>Ppt</li>
-                        <li>MS excel</li>
+                        <li>MS Excel</li>
                         <li>Image</li>
-
                     </ul>
                 </li>
                 <li onclick="MenuClick4()" class="file-navbar-4">View</li>
@@ -860,15 +929,29 @@
                         <li>Underline</li>
                         <li>Subscript</li>
                         <li>Superscript</li>
-                        <li><>Code</li>
+                        <li>
+                            <>Code
+                        </li>
                         <li onclick="MenuClick6()" class="file-navbar-6">Heading
                             <ul class="sub-menu">
-                                <li><h1>H1</h1></li>
-                                <li><H2>H2</H2></li>
-                                <li><h3>H3</h3></li>
-                                <li><h4>H4</h4></li>
-                                <li><h5>H5</h5></li>
-                                <li><h6>H6</h6></li>
+                                <li>
+                                    <h1>H1</h1>
+                                </li>
+                                <li>
+                                    <H2>H2</H2>
+                                </li>
+                                <li>
+                                    <h3>H3</h3>
+                                </li>
+                                <li>
+                                    <h4>H4</h4>
+                                </li>
+                                <li>
+                                    <h5>H5</h5>
+                                </li>
+                                <li>
+                                    <h6>H6</h6>
+                                </li>
                             </ul>
                         </li>
                         <li>Align</li>
@@ -1024,7 +1107,7 @@
                 </div>
             </div>
             <div class="submit-button">
-                    <button onclick="submitText()" id="submitBtn">Upload</button>
+                <button onclick="submitText()" id="submitBtn">Upload</button>
             </div>
             <!-- Right Section -->
             <div class="toolbar-right">
@@ -1056,9 +1139,13 @@
         </div>
 
         <!-- Text Area -->
+        <!-- <div class="text-area-container">
+            <textarea class="text-area" id="textArea" contenteditable="true" placeholder="Start typing here..."
+                ></textarea>
+        </div> -->
+        <!-- Content Editable Div -->
         <div class="text-area-container">
-            <textarea class="text-area" id="textArea"  contenteditable="true" placeholder="Start typing here..."
-                oninput="handleTextChange()"></textarea>
+            <div class="text-area" id="textArea" contenteditable="true" placeholder="Start typing here..."></div>
         </div>
 
         <!-- Status Bar -->
@@ -1387,45 +1474,49 @@
         }
 
         //showing file bar
-        function MenuClick(){
-            const menu=document.getElementsByClassName('file-menu')[0];
-            if(menu.style.display == "block"){
-                menu.style.display = "none";}
-            else{
+        function MenuClick() {
+            const menu = document.getElementsByClassName('file-menu')[0];
+            if (menu.style.display == "block") {
+                menu.style.display = "none";
+            }
+            else {
                 menu.style.display = "block";
             }
         }
         //showing edit bar
-        function MenuClick2(){
-            const menu=document.getElementsByClassName('file-menu')[1];
-            if(menu.style.display == "block"){
-                menu.style.display = "none";}
-            else{
+        function MenuClick2() {
+            const menu = document.getElementsByClassName('file-menu')[1];
+            if (menu.style.display == "block") {
+                menu.style.display = "none";
+            }
+            else {
                 menu.style.display = "block";
             }
         }
         // showing insert bar
-        function MenuClick3(){
-            const menu=document.getElementsByClassName('file-menu')[2];
-            if(menu.style.display == "block"){
-                menu.style.display = "none";}
-            else{
+        function MenuClick3() {
+            const menu = document.getElementsByClassName('file-menu')[2];
+            if (menu.style.display == "block") {
+                menu.style.display = "none";
+            }
+            else {
                 menu.style.display = "block";
             }
         }
-                function MenuClick5(){
-            const menu=document.getElementsByClassName('file-menu')[3];
-            if(menu.style.display == "block"){
-                menu.style.display = "none";}
-            else{
+        function MenuClick5() {
+            const menu = document.getElementsByClassName('file-menu')[3];
+            if (menu.style.display == "block") {
+                menu.style.display = "none";
+            }
+            else {
                 menu.style.display = "block";
             }
         }
 
 
         //for upload
-        function submitText(){
-            const text=document.getElementById("textArea").value;
+        function submitText() {
+            const text = document.getElementById("textArea").value;
             console.log(text);
         }
 
@@ -1520,23 +1611,42 @@
         // Initialize when page loads
         window.addEventListener('load', initEditor);
 
- function horizontalLine() {
-      const editor = document.getElementById("textArea");
-      editor.focus(); 
+        function insertHorizontalLine() {
+            alert("sds");
+            const editor = document.getElementById('textArea');
 
-      const selection = window.getSelection();
-      if (!selection.rangeCount) return;
+            // Create elements
+            const br = document.createElement("br");
+            const hr = document.createElement("hr");
 
-      const range = selection.getRangeAt(0);
-      const hr = document.createElement("hr");
-      range.deleteContents();
-      range.insertNode(hr);
+            // Append <br> and <hr> at the end
+            editor.appendChild(br.cloneNode());
+            editor.appendChild(hr);
+            editor.appendChild(br.cloneNode());
 
-      range.setStartAfter(hr);
-      range.setEndAfter(hr);
-      selection.removeAllRanges();
-      selection.addRange(range);
-    }    </script>
+            // Scroll to bottom after inserting line
+            editor.scrollTop = editor.scrollHeight;
+        }
+        function MenuClick3() {
+            const menu = document.querySelector('.file-navbar-3');
+            menu.classList.toggle('show-menu');
+        }
+
+        function insertHorizontalLine() {
+            const editor = document.getElementById('textArea');
+
+            // Create HR and spacing
+            const br = document.createElement("br");
+            const hr = document.createElement("hr");
+
+            editor.appendChild(br.cloneNode());
+            editor.appendChild(hr);
+            editor.appendChild(br.cloneNode());
+
+            editor.scrollTop = editor.scrollHeight;
+        }
+
+
     </script>
 </body>
 
