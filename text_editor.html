@@ -24,9 +24,9 @@
 
                 <li onclick="MenuClick()" class="file-navbar">File
                     <ul class="file-menu">
-                        <li>New file <i class="bi bi-file"></i></li>
+                        <li onclick="createNewFile()">New file <i class="bi bi-file"></i></li>
                         <li>Open <i class="bi bi-folder2-open"></i></li>
-                        <li>Save <i class="bi bi-floppy"></i></li>
+                        <li onclick="saveAsTextFile()">Save <i class="bi bi-floppy"></i></li>
                         <li>Save As <i class="bi bi-floppy2-fill"></i></li>
                         <li>Open Folder <i class="bi bi-folder2-open"></i></li>
                     </ul>
@@ -57,10 +57,11 @@
                     <ul class="file-menu">
                         <li id="boldBtn" onclick="toggleFormat('bold')" title="Bold">Bold <strong>B</strong></li>
                         <li id="italicBtn" onclick="toggleFormat('italic')" title="Italic">Italic <i>I</i></li>
-                        <li id="underlineBtn" onclick="toggleFormat('underline')" title="Underline">Underline <U>U</U>
+                        <li id="underlineBtn" onclick="toggleFormat('underline')" title="Underline">Underline
+                            <U>U</U>
                         </li>
-                        <li>Subscript <sub>SUB</sub></li>
-                        <li>Superscript <sup>SUP</sup></li>
+                        <li onclick="applyFormat('sub')">Subscript <sub>SUB</sub></li>
+                        <li onclick="applyFormat('sup')">Superscript <sup>SUP</sup></li>
                         <li>
                             <>Code
                         </li>
@@ -237,19 +238,19 @@
                 <button onclick="submitText()" id="submitBtn">Upload</button>
             </div>
             <div id="successAlert" style="
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: #d4edda;
-        color: #155724;
-        padding: 15px;
-        text-align: center;
-        font-weight: bold;
-        z-index: 9999;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-     ">
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            z-index: 9999;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            ">
                 ✅ Successfully updated
             </div>
 
@@ -283,17 +284,22 @@
             <textarea class="text-area" id="textArea" contenteditable="true" placeholder="Start typing here..."
                 ></textarea>
         </div> -->
+        <!-- Tabs for recently opened files -->
+        <div id="fileTabs"></div>
+
         <!-- Content Editable Div -->
         <div class="text-area-container">
+            <h3 id="currentFileName">No file opened</h3>
             <div class="text-area" id="textArea" contenteditable="true">Start typing here...</div>
+
+            <!-- Status Bar -->
+            <div class="status-bar">
+                <span id="charCount">Characters: 0</span>
+                <span id="wordCount">Words: 0</span>
+            </div>
+        </div>
         </div>
 
-        <!-- Status Bar -->
-        <div class="status-bar">
-            <span id="charCount">Characters: 0</span>
-            <span id="wordCount">Words: 0</span>
-        </div>
-    </div>
 
 </body>
 
