@@ -92,14 +92,14 @@
             padding: 20px;
         }
  */
-        .editor-container {
+        /* .editor-container {
             max-width: 1200px;
             margin: 0 auto;
             background: white;
             border-radius: 8px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-        }
+        } */
 
         /* Navbar Styles */
         .navbar {
@@ -766,10 +766,11 @@
 
 
         }
+
         .file-navbar-2 {
             position: relative;
             cursor: pointer;
-}
+        }
 
         .file-navbar-2:hover .file-menu {
             display: block;
@@ -780,10 +781,11 @@
             display: block;
             width: 140px;
         }
+
         .file-navbar-5 {
             position: relative;
             cursor: pointer;
-}
+        }
 
         .file-navbar-5:hover .file-menu {
             display: block;
@@ -794,7 +796,8 @@
             z-index: 99;
 
         }
-        .fomenu{
+
+        .fomenu {
             /* display: none; */
             position: absolute;
             background-color: #f0f0f0;
@@ -805,10 +808,11 @@
             box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
             width: 125px;
         }
-        .fontmenu:hover .fomenu{
+
+        .fontmenu:hover .fomenu {
             display: block;
         }
-        
+
 
 
         .sub-menu {
@@ -889,9 +893,10 @@
 
         hr {
             border: none;
-            border-top: 1px solid #e3dfde ;
+            border-top: 1px solid #e3dfde;
             margin: 10px 0;
         }
+
         .font-family-select-menu option {
             padding: 8px;
             font-size: 14px;
@@ -946,7 +951,7 @@
             font-family: Bookman, serif;
         }
 
-        .font-family-select-menu  option[value="Comic Sans MS"] {
+        .font-family-select-menu option[value="Comic Sans MS"] {
             font-family: "Comic Sans MS", cursive;
         }
 
@@ -1192,3 +1197,90 @@
             font-family: Arial, sans-serif;
             padding: 4px 8px;
         }
+
+        .font-size-select-menu {
+            display: none;
+            width: 60px;
+            padding: 4px 8px;
+            border: none;
+            border-right: 1px solid #e5e7eb;
+            background-color: #f0f0f0;
+            font-size: 14px;
+            position: absolute;
+            margin-left: 100px;
+            margin-top: -20px;
+            list-style-type: none;
+        }
+
+        .font-size-select-menu li {
+            font-size: 14px;
+        }
+
+        .file-navbar-8:hover .font-size-select-menu {
+            display: block;
+            position: absolute;
+        }
+
+        #text-area-container {
+            margin-left: 220px;
+            padding: 10px;
+        }
+
+        .sidebar {
+            float: left;
+            width: 200px;
+            background: #f8f9fa;
+            padding: 10px;
+            border-right: 1px solid #ccc;
+            height: 500px;
+            margin-top:-480px;
+            border-radius:24px ;
+
+        }
+
+        #fileList li {
+            margin-bottom: 5px;
+        }
+
+        #fileList li:hover {
+            text-decoration: underline;
+        }
+
+        /* File tab styles */
+    #fileTabs {
+      display: flex;
+      gap: 5px;
+      padding: 8px 10px;
+      background: #eee;
+      border-bottom: 1px solid #ccc;
+      overflow-x: auto;
+    }
+
+    .tab {
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+      border-bottom: none;
+      background: #ddd;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+      border-radius: 5px 5px 0 0;
+    }
+
+    .tab.active {
+      background: white;
+      font-weight: bold;
+    }
+
+    .tab button {
+      border: none;
+      background: none;
+      color: red;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .text-area-container {
+      padding: 10px;
+    }
