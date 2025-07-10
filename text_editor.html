@@ -14,6 +14,8 @@
         rel="stylesheet">
     <link rel="stylesheet" href="style.css" type="text/css">
     <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
 </head>
 
 <body>
@@ -25,10 +27,9 @@
                 <li onclick="MenuClick()" class="file-navbar">File
                     <ul class="file-menu">
                         <li onclick="createNewFile()">New file <i class="bi bi-file"></i></li>
-                        <li>Open <i class="bi bi-folder2-open"></i></li>
+                        <li id="openBtn" onclick="openFile()">Open <i class="bi bi-folder2-open"></i></li>
                         <li onclick="saveAsTextFile()">Save <i class="bi bi-floppy"></i></li>
-                        <li>Save As <i class="bi bi-floppy2-fill"></i></li>
-                        <li>Open Folder <i class="bi bi-folder2-open"></i></li>
+                        <li onclick="saveAs()">Save As <i class="bi bi-floppy2-fill"></i></li>
                     </ul>
                 </li>
 
@@ -60,36 +61,45 @@
                         <li id="underlineBtn" onclick="toggleFormat('underline')" title="Underline">Underline
                             <U>U</U>
                         </li>
-                        <li onclick="applyFormat('sub')">Subscript <sub>SUB</sub></li>
-                        <li onclick="applyFormat('sup')">Superscript <sup>SUP</sup></li>
-                        <li>
-                            <>Code
-                        </li>
-                        <li onclick="MenuClick6()" class="file-navbar-6">Heading
+                        <button onclick="applyFormat('sub')" style="border:none;background-color:white;font-size:15px;text-align: center;padding-right: 28px;border-bottom: 1px solid #d2d4d6;padding-top: 5px;width: 100%;border-radius: 4px;">Subscript <sub>SUB</sub></button>
+                        <button onclick="applyFormat('sup')"  style="border:none;background-color:white;font-size:15px;text-align: center;padding-right: 15px;border-bottom: 1px solid #d2d4d6;padding-top: 5px;width: 100%;border-radius: 4px;padding-bottom: 4px;">Superscript <sup>SUP</sup></button>
+                        <button onclick="wrapWithAngleBrackets()" style="border:none;background-color:white;font-size:15px;text-align: center;padding-right: 57px;border-bottom: 1px solid #d2d4d6;padding-top: 5px;width: 100%;border-radius: 4px;padding-bottom: 4px;">
+                            Code <>
+                        </button>
+                        <li class="file-navbar-6">Heading
                             <ul class="sub-menu">
-                                <li>
+                                <li><button onclick="headingElement('h1')" style="border:none;background-color: #f0f0f0;">
                                     <h1>H1</h1>
+                                
+                                </button>
                                 </li>
                                 <li>
+                                <button onclick="headingElement('h2')" style="border:none;background-color: #f0f0f0;">
                                     <H2>H2</H2>
+                                </button>
                                 </li>
                                 <li>
+                                <button onclick="headingElement('h3')" style="border:none;background-color: #f0f0f0;">
                                     <h3>H3</h3>
+                                </button>
                                 </li>
                                 <li>
+                                <button onclick="headingElement('h4')" style="border:none;background-color: #f0f0f0;">
                                     <h4>H4</h4>
+                                </button>
                                 </li>
                                 <li>
+                                <button onclick="headingElement('h5')" style="border:none;background-color: #f0f0f0;">
                                     <h5>H5</h5>
+                                </button>
                                 </li>
                                 <li>
+                                <button onclick="headingElement('h6')" style="border:none;background-color: #f0f0f0;">
                                     <h6>H6</h6>
+                                </button>
                                 </li>
                             </ul>
                         </li>
-                        <li>Align</li>
-                        <li>Inline</li>
-                        <li>Block</li>
                     </ul>
         </div>
 
@@ -299,6 +309,7 @@
             </div>
         </div>
         </div>
+  <input type="file" id="fileInput" style="display: none;" />
 
 
 </body>
